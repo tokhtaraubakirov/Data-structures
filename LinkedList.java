@@ -12,6 +12,14 @@ public class LinkedList {
         }
     }
 
+    public void displayList() {
+        Node current = head;
+        while(current != null){
+            System.out.println(current.data + " ");
+            current = current.next;
+        }
+    }
+
     public static void main(String[]args){
         LinkedList list = new LinkedList();
 
@@ -25,5 +33,7 @@ public class LinkedList {
         node1.next = node2;
 
         list.head = node1;
+
+        list.displayList();
     }
 }

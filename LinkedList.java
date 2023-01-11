@@ -37,6 +37,26 @@ public class LinkedList {
         System.out.print(size);
     }
 
+    public void reverseList(){
+        Node prev = null;
+        Node curr = head;
+        Node next = null;
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        System.out.print(prev + " ");
+    }
+
+    @Override
+    public String toString() {
+        return "LinkedList{" +
+                "head=" + head +
+                '}';
+    }
+
     public static void main(String[]args){
         LinkedList list = new LinkedList();
 
@@ -55,5 +75,7 @@ public class LinkedList {
 
         list.displayList();
         list.getSize();
+        list.reverseList();
+        list.displayList();
     }
 }

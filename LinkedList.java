@@ -5,7 +5,6 @@ public class LinkedList {
     public static class Node {
         int data; //defining our data;
         Node next; //defining next pointer to the next NODE;
-
         public Node(int data){
             this.data = data;
             this.next = null;
@@ -15,9 +14,27 @@ public class LinkedList {
     public void displayList() {
         Node current = head;
         while(current != null){
-            System.out.println(current.data + " ");
+            System.out.print(current.data + " ");
             current = current.next;
         }
+    }
+
+    public void addNode(int num){
+        Node newNode = new Node(num);
+        Node currentNode = head;
+        while(currentNode.next != null){
+            currentNode = currentNode.next;
+        }
+        currentNode.next = newNode;
+    }
+
+    public void getSize(){
+        int size = 0;
+        for(Node i = head; i != null; i = i.next){
+            size++;
+        }
+        System.out.println();
+        System.out.print(size);
     }
 
     public static void main(String[]args){
@@ -34,6 +51,9 @@ public class LinkedList {
 
         list.head = node1;
 
+        list.addNode(54);
+
         list.displayList();
+        list.getSize();
     }
 }
